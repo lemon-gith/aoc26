@@ -1,0 +1,11 @@
+[package]
+name = "aoc26"
+version = "0.1.0"
+edition = "2024"
+default-run = "aoc26"
+
+# Add whatever crates you like for your solutions here (itertools, regex, ...)
+[dependencies]
+
+[profile.release]
+debug = 1  # keeps line numbers in panics/backtraces for `aoc run`

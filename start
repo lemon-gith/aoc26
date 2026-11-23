@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+# Start the dev container (building it if needed) and open a shell in it.
+#
+#   ./start            open a shell (run it again in another terminal for a second one)
+#   ./start <cmd...>   run one command in the container, e.g. ./start aoc status
+#   ./start --rebuild  rebuild the image from scratch (e.g. after changing the Dockerfile)
+#   ./start stop       stop the container
+#   ./start clean      remove the container and its cached builds/crates
+set -euo pipefail
+cd "$(dirname "$0")"
+
+if ! command -v docker >/dev/null 2>&1; then
+    echo "Docker isn't installed (or isn't on PATH): https://docs.docker.com/get-docker/" >&2
+    exit 1
+fi
+
+export AOC_UID="$(id -u)" AOC_GID="$(id -g)"
+
+case "${1:-}" in
+    stop)
+        exec docker compose stop
+        ;;
+    clean)
+        exec docker compose down --volumes
+        ;;
+    --rebuild)
+        shift
+        docker compose build --no-cache
+        ;;
+esac
+
+# --build is quick when nothing changed, and picks up edits to aoc_helper/
+docker compose up --detach --build --wait aoc >/dev/null
+
+if [ $# -eq 0 ]; then
+    exec docker compose exec aoc bash
+else
+    exec docker compose exec aoc "$@"
+fi

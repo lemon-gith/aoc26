@@ -1,0 +1,6 @@
+# Only the helper's source is needed to build the image (the repo itself is mounted)
+*
+!aoc_helper
+aoc_helper/target
+aoc_helper/.env
+aoc_helper/.cache

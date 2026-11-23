@@ -1,0 +1,33 @@
+//! Day {day}: https://adventofcode.com/{year}/day/{day}
+
+use crate::answer::Answer;
+
+#[allow(unused_variables)] // `input` is unused until you start; delete this line then
+pub fn puzzle1(input: &str) -> Result<Answer, String> {
+    Ok(Answer::Unsolved)
+}
+
+#[allow(unused_variables)] // `input` is unused until you start; delete this line then
+pub fn puzzle2(input: &str) -> Result<Answer, String> {
+    Ok(Answer::Unsolved)
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    const EXAMPLE: &str = "\
+";
+
+    #[test]
+    #[ignore = "add the example input + expected answer, then delete this line"]
+    fn part1_example() {
+        assert_eq!(puzzle1(EXAMPLE), Ok(Answer::from(0)));
+    }
+
+    #[test]
+    #[ignore = "add the example input + expected answer, then delete this line"]
+    fn part2_example() {
+        assert_eq!(puzzle2(EXAMPLE), Ok(Answer::from(0)));
+    }
+}

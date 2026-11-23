@@ -1,0 +1,27 @@
+# Used by ./start. The repo is mounted at /aoc, so edits on either side are shared.
+name: aoc26
+
+services:
+  aoc:
+    build:
+      context: .
+      args:
+        UID: ${AOC_UID:-1000}
+        GID: ${AOC_GID:-1000}
+    image: aoc26-dev
+    init: true
+    tty: true
+    stdin_open: true
+    command: sleep infinity
+    working_dir: /aoc
+    volumes:
+      - .:/aoc
+      - cargo-home:/home/aoc/.cargo # downloaded crates
+      - target:/home/aoc/target # build output, kept out of your repo
+    environment:
+      TERM: ${TERM:-xterm-256color}
+      TZ: ${TZ:-}
+
+volumes:
+  cargo-home:
+  target:

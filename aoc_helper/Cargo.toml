@@ -1,0 +1,26 @@
+[package]
+name = "aoc_helper"
+version = "0.1.0"
+edition = "2024"
+description = "The `aoc` command: watch, run, pull and submit Advent of Code solutions"
+
+[[bin]]
+name = "aoc"
+path = "src/main.rs"
+
+# Not part of the solution crate: this keeps cargo from looking for a parent workspace.
+[workspace]
+
+[dependencies]
+anyhow = "1.0.104"
+chrono = "0.4.45"
+clap = { version = "4.6.9", features = ["derive", "wrap_help"] }
+crossterm = "0.29.0"
+dotenvy = "0.15.7"
+notify = "9.0.0"
+regex = "1.13.2"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+toml = "1.2.2"
+toml_edit = "0.25.20"
+ureq = "3.5.2"

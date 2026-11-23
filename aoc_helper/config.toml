@@ -1,0 +1,49 @@
+# Settings for the `aoc` helper. Edit freely; `aoc` only ever changes values
+# when you ask it to (e.g. picking "don't ask again" in `aoc watch`).
+
+# Which Advent of Code event you're solving, and how many puzzles it has.
+# (From 2025 onwards AoC runs for 12 days.)
+year = 2025
+days = 12
+
+# AoC asks that automated tools identify themselves with a way to contact you,
+# e.g. "github.com/you/aoc26 by you@example.com". Please fill this in.
+user_agent = ""
+
+# Refuse to fetch puzzles before they unlock (midnight US-Eastern, 05:00 UTC).
+check_unlock = true
+
+# Where things are fetched from. `{year}`, `{day}` and `{id}` are filled in for you,
+# and each path is appended to `base`. If AoC ever moves something, fix it here.
+[urls]
+base = "https://adventofcode.com/{year}"
+input = "/day/{day}/input"
+puzzle = "/day/{day}"
+answer = "/day/{day}/answer"
+leaderboard = "/leaderboard/private/view/{id}.json"
+
+[watch]
+# What to do when clippy only finds warnings in the day you're working on:
+#   "ask"    - ask whether to fix them or test anyway, with a "don't ask again" option
+#   "always" - always ask, without the "don't ask again" option
+#   "never"  - show them, then go straight to the tests
+warnings = "ask"
+# Wait this long after a save before re-checking, so a burst of saves only runs once.
+debounce_ms = 300
+# Set to true if saves aren't noticed (e.g. Docker on a Windows-filesystem repo).
+poll = false
+poll_interval_ms = 500
+
+[run]
+# Build solutions in release mode for `aoc run`, `aoc submit` and real-input runs in `aoc watch`.
+release = true
+
+[leaderboard]
+# Optional: a private leaderboard to show in `aoc status` and to count your stars from.
+# The id is the number at the end of the leaderboard's URL. You're automatically on
+# a leaderboard of your own, whose id is your user id.
+id = ""
+# Your AoC user id, if the leaderboard isn't your own (leave empty to use the owner).
+user_id = ""
+# AoC asks that leaderboards are fetched at most once every 15 minutes.
+refresh_minutes = 15
