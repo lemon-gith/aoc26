@@ -12,9 +12,6 @@ RUN apt-get update \
 # rust-analyzer + rust-src are for editors attached to the container
 RUN rustup component add clippy rustfmt rust-analyzer rust-src
 
-# bacon, for anyone who wants a plain watcher too (`aoc watch` doesn't need it)
-RUN cargo install --locked bacon && rm -rf /usr/local/cargo/registry
-
 # The helper, installed as `aoc`. `./start` rebuilds this layer whenever aoc_helper/ changes.
 COPY aoc_helper /opt/aoc_helper
 RUN cargo install --locked --path /opt/aoc_helper --root /usr/local \
