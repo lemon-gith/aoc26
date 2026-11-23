@@ -1,0 +1,14 @@
+// Optional: lets VS Code (or any devcontainer-aware editor) work *inside* the container.
+// If you'd rather edit on your own machine, ignore this and just use ./start.
+{
+  "name": "aoc26",
+  "dockerComposeFile": ["../compose.yaml"],
+  "service": "aoc",
+  "workspaceFolder": "/aoc",
+  "remoteUser": "aoc",
+  "customizations": {
+    "vscode": {
+      "extensions": ["rust-lang.rust-analyzer"]
+    }
+  }
+}
