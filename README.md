@@ -141,4 +141,4 @@ mixed up with the new ones.
 
 ### Credits
 
-The original repository design was inspired by [AxlLind's](https://github.com/AxlLind/AdventOfCode2022).
+The original repository design was based on [my AoC24 repo](https://github.com/lemon-gith/aoc24), which was inspired by [AxlLind's](https://github.com/AxlLind/AdventOfCode2022).
