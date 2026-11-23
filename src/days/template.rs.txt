@@ -1,13 +1,13 @@
 //! Day {day}: https://adventofcode.com/{year}/day/{day}
 
-#![allow(unused)] // remove once you've got going, if you want the extra nagging
-
 use crate::answer::Answer;
 
+#[allow(unused_variables)] // `input` is unused until you start; delete this line then
 pub fn puzzle1(input: &str) -> Result<Answer, String> {
     Ok(Answer::Unsolved)
 }
 
+#[allow(unused_variables)] // `input` is unused until you start; delete this line then
 pub fn puzzle2(input: &str) -> Result<Answer, String> {
     Ok(Answer::Unsolved)
 }
