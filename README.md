@@ -5,7 +5,7 @@
 Solutions in Rust, with an `aoc` helper that re-checks your code every time you save:
 **clippy → your tests → your real input → submit**, asking you before each step that needs a decision.
 
-Everything (Rust, clippy, bacon, the `aoc` helper) lives in a Docker container. All you need on
+Everything (Rust, clippy, the `aoc` helper) lives in a Docker container. All you need on
 your machine is Docker and a way to run `./start` (macOS/Linux terminal, WSL or Git Bash on Windows).
 
 > [!IMPORTANT]
